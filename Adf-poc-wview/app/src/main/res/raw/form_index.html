@@ -1,0 +1,189 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="visionjsbridge.js" type="text/javascript"></script>
+</head>
+<body style="background-color:gray; padding: 0 0 0 0; margin: 0 0 0 0;">
+<div style="position:absolute; width:428px; height:514px; top:0px; left:0px" id="form"></div>
+<script>
+    autoLoadWidgets =["form"];
+
+    widgetMap["form"] = {
+        "id" : "advisorViewBaseballCard_TrackerModal",
+        "name" : "advisorViewBaseballCard_TrackerModal",
+        "class" : "ATKForm",
+        "notificationId" : "",
+        "properties" : {
+            "submitButton" : {
+                "id" : "postButtonFeedModal",
+                "name" : "postButtonFeedModal",
+                "class" : "ATKButton",
+                "notificationId" : "myFormNotificationId",
+                "data" : {},
+                "properties" : {
+                    "title" : "Post"
+                },
+                "style" : {
+                    "image" : "",
+                    "imageSelected" : "",
+                    "backgroundColor" : "",
+                    "fontName" : "Helvetica-Bold",
+                    "fontSize" : 15,
+                    "fontColor" : "#ffffff",
+                    "borderColor" : "#ffffff",
+                    "borderWidth" : 1,
+                    "cornerRadius" : 5,
+                    "x" : 20,
+                    "y" : 140,
+                    "width" : 165,
+                    "height" : 36
+                }
+            }
+        },
+        "style" : {
+            "x" : "0",
+            "y" : "0",
+            "width" : "828",
+            "height" : "614",
+            "backgroundColor" : "",
+            "cornerRadius" : 20,
+            "borderColor" : "",
+            "borderWidth" : 0
+        },
+        "data" : {},
+        "components" : [
+            {
+                "id" : "backgroundImageFeedModal",
+                "name" : "backgroundImageFeedModal",
+                "class" : "ATKImageView",
+                "notificationId" : "",
+                "data" : {
+                    "source" : "bg.png",
+                    "type" : "local"
+                },
+                "style" : {
+                    "x" : "0",
+                    "y" : "0",
+                    "width" : "100%",
+                    "height" : "100%",
+                    "backgroundColor" : ""
+                },
+                "properties" : {}
+            },
+            {
+                "class" : "ATKLabel",
+                "id" : "devTrackerTitleFeedModal",
+                "name" : "devTrackerTitleFeedModal",
+                "notificationId" : "",
+                "data" : {},
+                "properties" : {
+                    "text" : "Name",
+                    "numberOfLines" : 1
+                },
+                "style" : {
+                    "x" : 24,
+                    "y" : 14,
+                    "width" : 828,
+                    "height" : 30,
+                    "backgroundColor" : "",
+                    "fontName" : "Helvetica-Bold",
+                    "fontSize" : 18,
+                    "fontColor" : "#ffffff",
+                    "textAlignment" : "left",
+                    "textOrientation" : "horizontal"
+                }
+            },
+            {
+                "id": "atktext",
+                "class":"ATKTextField",
+                "name": "someName",
+                "notificationId": "",
+                "data":{},
+                "style":{
+                    "x":140,
+                    "y":10,
+                    "width":200,
+                    "height":40,
+                    "fontName":"OpenSans-Regular",
+                    "fontSize":15,
+                    "fontColor":"",
+                    "textAlignment":"left",
+                    "paddingLeft":0,
+                    "paddingRight":10,
+                    "cornerRadius":5,
+                    "borderColor":"#111111",
+                    "borderWidth":1,
+                    "backgroundColor": "#FFFFFF",
+                    "accesoryImagePath": "dist/searchimage.png",
+                    "accesoryLocation": "left"
+                },
+                "properties":{
+                    "placeholder":"Please type your name"
+                }
+            },
+            {
+                "class" : "ATKLabel",
+                "id" : "devTrackerTitleFeedModal2",
+                "name" : "devTrackerTitleFeedModal2",
+                "notificationId" : "",
+                "data" : {},
+                "properties" : {
+                    "text" : "Comments",
+                    "numberOfLines" : 1
+                },
+                "style" : {
+                    "x" : 24,
+                    "y" : 64,
+                    "width" : 828,
+                    "height" : 30,
+                    "backgroundColor" : "",
+                    "fontName" : "Helvetica-Bold",
+                    "fontSize" : 18,
+                    "fontColor" : "#ffffff",
+                    "textAlignment" : "left",
+                    "textOrientation" : "horizontal"
+                }
+            },
+            {
+                "id": "atktext2",
+                "class":"ATKTextField",
+                "name": "someName",
+                "notificationId": "",
+                "data":{},
+                "style":{
+                    "x":140,
+                    "y":60,
+                    "width":200,
+                    "height":40,
+                    "fontName":"OpenSans-Regular",
+                    "fontSize":15,
+                    "fontColor":"",
+                    "textAlignment":"left",
+                    "paddingLeft":0,
+                    "paddingRight":10,
+                    "cornerRadius":5,
+                    "borderColor":"#111111",
+                    "borderWidth":1,
+                    "backgroundColor": "#FFFFFF",
+                    "accesoryImagePath": "dist/searchimage.png",
+                    "accesoryLocation": "left"
+                },
+                "properties":{
+                    "placeholder":""
+                }
+            }
+        ],
+        "actions" : [
+            {
+                "event" : "ATKActionSubmit",
+                "type" : "javascript",
+                "params" : {
+                    "webId" : "webView1",
+                    "callbackFunction" : "onSelectPostFeedModal"
+                }
+            }
+        ]
+    }
+</script>
+</body>
+</html>

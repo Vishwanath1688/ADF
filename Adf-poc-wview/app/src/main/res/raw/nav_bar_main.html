@@ -1,0 +1,446 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="visionjsbridge.js" type="text/javascript"></script>
+    <script>
+
+    var isBackVisible = false;
+
+    function onSelect(id, jsonObject) {
+        var params;
+        var buttonNumber = (jsonObject.id).replace('tabbarbutton','');
+        selectButtonForIndex(buttonNumber);
+        setNavigationBackgroundColor(buttonNumber);
+        setNavigationTitle(buttonNumber);
+    }
+
+    function setNavigationBackgroundColor(buttonNumber){
+        params = {
+            "navigationId": "atknavbar",
+            "newColor":"",
+            "newImage":"dist/images/navbarbackground"+buttonNumber+".png"
+        };
+
+        data = {
+            "type":"changeBackgroundColor",
+            "params":params
+        };
+
+        postNotification("ATKNavigationNotification",data);
+    }
+
+    function setNavigationTitle(buttonNumber){
+        params = {
+            "navigationId": "atknavbar",
+            "newTitle": getTitleForButton(buttonNumber)
+        };
+
+        data = {
+            "type":"changeTitle",
+            "params":params
+        };
+
+        postNotification("ATKNavigationNotification",data);
+    }
+
+    function getTitleForButton(buttonNumber){
+        stringToReturn = "";
+        if (buttonNumber == 2){
+            stringToReturn = "Solutions";
+        }else if (buttonNumber == 3){
+            stringToReturn = "Integrated Demos";
+        }else if (buttonNumber == 4){
+            stringToReturn = "Interactive Content";
+        }else if (buttonNumber == 5){
+            stringToReturn = "Digital Briefcase";
+        }else if (buttonNumber == 6){
+            stringToReturn = "About Us";
+        }
+        return stringToReturn;
+    }
+
+    function selectButtonForIndex(index) {
+        for(var i=2;i<=5;i++){
+            if('tabbarbutton'+index != 'tabbarbutton'+i){
+                params = {
+                    "buttonId": 'tabbarbutton'+i,
+                    "selected": "NO"
+                };
+            }else{
+                params = {
+                    "buttonId": 'tabbarbutton'+i,
+                    "selected": "YES"
+                };
+            }
+
+            excecuteAction('tabbarbutton'+index,{},params,"setSelected");
+
+        }
+
+
+        var pageIndex = parseInt(index) - 2;
+        params = {
+            "scrollViewId": "mainscroll",
+            "pageNumber": pageIndex
+        };
+
+        excecuteAction('tabbarbutton'+index,{},params,"scrollToPage");
+
+    }
+
+    function onSelectFirstButton(id, jsonObject) {
+
+        var bundle = {
+                "id": "webView3",
+                "name": "Web View Widget",
+                "class": "ATKWebView",
+                "notificationId":"",
+                "style":{
+                    "x":"0",
+                    "y":"0",
+                    "width":"100%",
+                    "height":"100%",
+                    "backgroundColor":""
+                },
+                "properties":{
+                    "scrollable": "NO"
+                },
+                "data":{
+                    "callbackFunction": "onComplete",
+                    "source":"file:///android_res/raw/nav_bar_second_page.html",
+                    "type":"local"
+                }
+            };
+
+        params = {
+            "navigationId": "atknavbar",
+            "bundle": bundle
+        };
+
+        data = {
+            "type":"pushBundle",
+            "params":params
+        };
+
+        postNotification("ATKNavigationNotification",data);
+    }
+
+    </script>
+
+    <style type="text/css">
+        body{
+        margin: 0 0 0 0;  /* top right bottom left */
+        padding: 0 0 0 0;  /* top right bottom left */
+        }
+        .mainview {
+        width:100%;
+        height:680px;
+        }
+
+        .mainscroll{
+        float:left;
+        height:100%;
+        width:calc(100% - 134px);
+        }
+
+        .tabbuttoncontainer{
+        float:left;
+        width:134px;
+        height:680px;
+        }
+
+        .tabbutton{
+        width:100%;
+        height:136px;
+        }
+    </style>
+</head>
+<body>
+<div class="mainview">
+    <div class="tabbuttoncontainer">
+        <div id="tabbarbutton2" class="tabbutton"></div>
+        <div id="tabbarbutton3" class="tabbutton"></div>
+        <div id="tabbarbutton4" class="tabbutton"></div>
+        <div id="tabbarbutton5" class="tabbutton"></div>
+    </div>
+    <div id="mainscroll" class="mainscroll"></div>
+</div>
+</div>
+<script type="text/javascript">
+     autoLoadWidgets = ["tabbarbutton2", "tabbarbutton3", "tabbarbutton4", "tabbarbutton5", "mainscroll"];
+
+    widgetMap["tabbarbutton2"] = {
+        "id": "tabbarbutton2",
+        "class": "ATKButton",
+        "name": "Solutions Button",
+        "notificationId": "",
+        "style": {
+            "backgroundColor":"",
+            "image":"dist/images/solutions1.png",
+            "imagePressed":"dist/images/solutions1.png",
+            "imageSelected":"dist/images/solutions2.png",
+            "fontName":"AvenirNext-Regular",
+            "fontSize":19
+        },
+        "data": {},
+        "properties":{
+            "title": ""
+        },
+        "actions":[{
+                   "event": "ATKActionSelect",
+                   "type": "javascript",
+                   "params": {
+                   "webId": "webView2",
+                   "callbackFunction":"onSelect"
+                   }
+        }]
+    };
+
+widgetMap["tabbarbutton3"] = {
+    "id": "tabbarbutton3",
+    "class": "ATKButton",
+    "name": "Integrated Demo Button",
+    "notificationId": "",
+    "style": {
+        "backgroundColor":"",
+        "image":"dist/images/integrateddemo1.png",
+        "imagePressed":"dist/images/integrateddemo1.png",
+        "imageSelected":"dist/images/integrateddemo2.png",
+        "fontName":"AvenirNext-Regular",
+        "fontSize":19
+    },
+    "data": {},
+    "properties":{
+        "title": ""
+    },
+    "actions":[{
+               "event": "ATKActionSelect",
+               "type": "javascript",
+               "params": {
+               "webId": "webView2",
+               "callbackFunction":"onSelect"
+               }
+               }]
+};
+
+widgetMap["tabbarbutton4"] = {
+    "id": "tabbarbutton4",
+    "class": "ATKButton",
+    "name": "Interactive Content Button",
+    "notificationId": "",
+    "style": {
+        "backgroundColor":"",
+        "image":"dist/images/interactivecontent1.png",
+        "imagePressed":"dist/images/interactivecontent1.png",
+        "imageSelected":"dist/images/interactivecontent2.png",
+        "fontName":"AvenirNext-Regular",
+        "fontSize":19
+    },
+    "data": {},
+    "properties":{
+        "title": ""
+    },
+    "actions":[{
+               "event": "ATKActionSelect",
+               "type": "javascript",
+               "params": {
+               "webId": "webView2",
+               "callbackFunction":"onSelect"
+               }
+               }]
+};
+
+widgetMap["tabbarbutton5"] = {
+    "id": "tabbarbutton5",
+    "class": "ATKButton",
+    "name": "Digital Briefcase Button",
+    "notificationId": "",
+    "style": {
+        "backgroundColor":"",
+        "image":"dist/images/digitalbriefcase1.png",
+        "imagePressed":"dist/images/digitalbriefcase1.png",
+        "imageSelected":"dist/images/digitalbriefcase2.png",
+        "fontName":"AvenirNext-Regular",
+        "fontSize":19
+    },
+    "data": {},
+    "properties":{
+        "title": ""
+    },
+    "actions":[{
+               "event": "ATKActionSelect",
+               "type": "javascript",
+               "params": {
+               "webId": "webView2",
+               "callbackFunction":"onSelect"
+               }
+               }]
+};
+
+widgetMap["tabbarbutton6"] = {
+    "id": "tabbarbutton6",
+    "class": "ATKButton",
+    "name": "About Us Button",
+    "notificationId": "",
+    "style": {
+        "backgroundColor":"",
+        "image":"dist/images/aboutus1.png",
+        "imagePressed":"dist/images/aboutus1.png",
+        "imageSelected":"dist/images/aboutus2.png",
+        "fontName":"AvenirNext-Regular",
+        "fontSize":19
+    },
+    "data": {},
+    "properties":{
+        "title": ""
+    },
+    "actions":[{
+               "event": "ATKActionSelect",
+               "type": "javascript",
+               "params": {
+               "webId": "webView2",
+               "callbackFunction":"onSelect"
+               }
+               }]
+};
+
+widgetMap["mainscroll"] =  {
+    "id": "mainscroll",
+    "name": "ScrollView",
+    "class": "ATKScrollView",
+    "notificationId":"",
+    "components" : [
+                                        {
+                                            "id": "firstButton",
+                                            "class": "ATKButton",
+                                            "name": "Solutions Button",
+                                            "notificationId": "",
+                                            "style": {
+                                                "x" : 0,
+                                                "y" : 0,
+                                                "width" : 768,
+                                                "height" : 600,
+                                                "backgroundColor":"",
+                                                "image":"dist/images/solutions1.png",
+                                                "imagePressed":"",
+                                                "imageSelected":"",
+                                                "fontName":"AvenirNext-Regular",
+                                                "fontSize":19
+                                            },
+                                            "data": {},
+                                            "properties":{
+                                                "title": ""
+                                            },
+                                            "actions":[{
+                                                       "event": "ATKActionSelect",
+                                                       "type": "javascript",
+                                                       "params": {
+                                                       "webId": "webView2",
+                                                       "callbackFunction":"onSelectFirstButton"
+                                                       }
+                                            }]
+                                        },
+                                        {
+                                            "id" : "about_gallery_second",
+                                            "name" : "imageView",
+                                            "class" : "ATKImageView",
+                                            "notificationId" : "",
+                                            "data" : {
+                                                "source" : "dist/images/integrateddemo1.png",
+                                                "type" : "local"
+                                            },
+                                            "style" : {
+                                                "x" : "100%",
+                                                "y" : 0,
+                                                "width" : 768,
+                                                "height" : 600,
+                                                "backgroundColor" : ""
+                                            },
+                                            "properties" : {}
+                                        },
+                                        {
+                                            "id" : "about_gallery_second",
+                                            "name" : "imageView",
+                                            "class" : "ATKImageView",
+                                            "notificationId" : "",
+                                            "data" : {
+                                                "source" : "dist/images/interactivecontent1.png",
+                                                "type" : "local"
+                                            },
+                                            "style" : {
+                                                "x" : "200%",
+                                                "y" : 0,
+                                                "width" : 768,
+                                                "height" : 600,
+                                                "backgroundColor" : ""
+                                            },
+                                            "properties" : {}
+                                        },
+                                        {
+                                            "id" : "about_gallery_second",
+                                            "name" : "imageView",
+                                            "class" : "ATKImageView",
+                                            "notificationId" : "",
+                                            "data" : {
+                                                "source" : "dist/images/digitalbriefcase1.png",
+                                                "type" : "local"
+                                            },
+                                            "style" : {
+                                                "x" : "300%",
+                                                "y" : 0,
+                                                "width" : 768,
+                                                "height" : 600,
+                                                "backgroundColor" : ""
+                                            },
+                                            "properties" : {}
+                                        },
+                                        {
+                                            "id" : "about_gallery_second",
+                                            "name" : "imageView",
+                                            "class" : "ATKImageView",
+                                            "notificationId" : "",
+                                            "data" : {
+                                                "source" : "dist/images/aboutus1.png",
+                                                "type" : "local"
+                                            },
+                                            "style" : {
+                                                "x" : "400%",
+                                                "y" : 0,
+                                                "width" : 768,
+                                                "height" : 600,
+                                                "backgroundColor" : ""
+                                            },
+                                            "properties" : {}
+                                        }
+                                    ],
+                                    "data" : {},
+                                    "style" : {
+                                        "x": 0,
+                                        "y": 0,
+                                        "width": 250,
+                                        "height": 200,
+                                        "backgroundColor" : "",
+                                        "pageIndicatorPositionY" : 20,
+                                        "currentPageIndicatorColor" : "#000000",
+                                        "pageIndicatorColor" : "#bbbbbb"
+                                    },
+                                    "properties" : {
+                                        "portrait" : {
+                                            "contentWidth" : 768,
+                                            "contentHeight" : 600
+                                        },
+                                        "landscape" : {
+                                            "contentWidth" : 768,
+                                            "contentHeight" : 600
+                                        },
+                                        "scrollable" : "YES",
+                                        "pagingEnabled" : "YES",
+                                        "showsDots" : "YES",
+                                        "numberOfPages" : 5
+                                    }
+};
+
+</script>
+</body>
+</html>
+    

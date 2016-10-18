@@ -1,0 +1,225 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="visionjsbridge.js" type="text/javascript"></script>
+    <style type="text/css">
+        body{
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+        }
+        .atkaccordion{
+            position:relative;
+            width:100%;
+            height:500px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+<br/>
+<a href="index.html" onClick="javascript:removeAllComponents();">Back</a>
+<br/>
+<div id="atkaccordion" class="atkaccordion"></div>
+<script type="text/javascript">
+    autoLoadWidgets = ["atkaccordion"];
+
+    widgetMap["atkaccordion"] = {
+        "id": "atkaccordion",
+        "class":"ATKAccordion",
+        "name": "ATKAccordion",
+        "notificationId": "",
+        "data":{
+            "type":"local",
+            "source":  [{
+                          "itemTitle":"Solutions",
+                              "itemContentComponent":{
+    "id": "atkpie",
+    "name": "atkchart5",
+    "class": "ATKChartManager",
+    "notificationId": "",
+    "components":[],
+    "data": {
+        "source":[{
+     "legend" : "Wealth",
+        "value" : "50",
+        "popover":{
+            "contentSize": "{200,80}",
+            "theme": "ATKPopoverDefaultTheme",
+            "contentComponent": {
+                "id": "atklabeldemo",
+                "class": "ATKLabel",
+                "name": "labelName",
+                "notificationId": "",
+                "data": {},
+                "properties": {
+                    "text": "Popoverlabel1"
+                },
+                "style": {
+                    "x": "5",
+                    "y": "0",
+                    "width": "200",
+                    "height": "50",
+                    "backgroundColor": "",
+                    "fontName": "AvenirNext-Regular",
+                    "fontSize": 15,
+                    "fontColor": "#FFFFFF"
+                }
+            }
+        },
+        "color" : "#dddddd"
+    },
+ {
+
+     "legend" : "Consumer",
+        "value" : "75",
+        "color" : "#a2c3d3"
+    },
+ {
+
+     "legend" : "Capital",
+        "value" : "10",
+        "popover":{
+            "contentSize": "{200,80}",
+            "theme": "ATKPopoverDefaultTheme",
+            "contentComponent": {
+                "id": "atklabeldemo",
+                "class": "ATKLabel",
+                "name": "labelName",
+                "notificationId": "",
+                "data": {},
+                "properties": {
+                    "text": "Popoverlabel2"
+                },
+                "style": {
+                    "x": "5",
+                    "y": "0",
+                    "width": "200",
+                    "height": "50",
+                    "backgroundColor": "",
+                    "fontName": "AvenirNext-Regular",
+                    "fontSize": 15,
+                    "fontColor": "#FFFFFF"
+                }
+            }
+        },
+        "color" : "#1e97cc"
+    },
+ {
+ "legend" : "Corporate",
+        "value" : "60",
+        "popover":{
+            "contentSize": "{200,80}",
+            "theme": "ATKPopoverDefaultTheme",
+            "contentComponent": {
+                "id": "atklabeldemo",
+                "class": "ATKLabel",
+                "name": "labelName",
+                "notificationId": "",
+                "data": {},
+                "properties": {
+                    "text": "Popoverlabel3"
+                },
+                "style": {
+                    "x": "5",
+                    "y": "0",
+                    "width": "200",
+                    "height": "50",
+                    "backgroundColor": "",
+                    "fontName": "AvenirNext-Regular",
+                    "fontSize": 15,
+                    "fontColor": "#FFFFFF"
+                }
+            }
+        },
+        "color" : "#D2EAF5"
+    }
+],
+        "type":"local"
+    },
+    "style":{
+         "x":0,
+          "y":0,
+          "width":"100%",
+          "height":"350",
+        "backgroundColor":"#c3d4ec",
+        "paddingTop" : 20,
+        "paddingBottom" : 0,
+        "paddingLeft" : 0,
+        "paddingRight" : 40,
+        "title" : "Title",
+        "titleFontName" : "Helvetica-Bold",
+        "titleFontSize" : 20,
+        "titleFontColor" : "#991133",
+        "titleAnchor" : "Top",
+        "titleDisplacementX" : 0,
+        "titleDisplacementY" : 20,
+        "dataLabelFontName" : "Helvetica",
+        "dataLabelFontSize" : 12,
+        "dataLabelFontColor" : "#333333",
+        "legend":{
+            "legendIsHidden" : "NO",
+            "legendAnchor" : "TopRight",
+            "legendDisplacementX" : 0,
+            "legendDisplacementY" : 0,
+            "legendFillColor" : "",
+            "legendBorderWidth" : 0,
+            "legendBorderColor" : "#FFFFFF",
+            "legendFontName" : "Helvetica-Bold",
+            "legendFontSize" : "14",
+            "legendFontColor" : "#119911",
+            "legendNumberOfColumns" : 1
+        }
+    },
+    "properties":{
+        "chartType" : "PieChart",
+        "animationDelay": 0.5
+    }
+}
+                          },
+                          {
+                          "itemTitle":"Digital Briefcase",
+                          "itemContentComponent":{
+                              "id": "atkSecScroll",
+                              "name": "atkSecScroll",
+                              "class": "ATKScrollView",
+                              "notificationId":"",
+                              "components" : [],
+                              "data": {},
+                              "style":{
+                                  "x":0,
+                                  "y":0,
+                                  "width":"100%",
+                                  "height":"300",
+                                  "backgroundColor":"#00FF00"
+                              },
+                              "properties":{
+                                  "scrollable": "NO",
+                                  "pagingEnabled": "NO",
+                                  "showsDots" : "NO",
+                                  "numberOfPages":1
+                              }
+                          }
+                          }
+                          ]
+        },
+        "style":{
+            "paddingTop":30,
+            "paddingLeft":"5%",
+            "itemWidth":"90%",
+            "itemHeight":"50",
+            "itemLeftImageExpanded":"dist/images/closebutton.png",
+            "itemLeftImageCollapsed":"dist/images/fullscreen.png",
+            "itemTitleFontName":"Museo 100",
+            "itemTitleFontSize":16,
+            "itemTitleFontColor":"#FFFFFF",
+            "itemTitleX":75,
+            "itemBackgroundColor":"#FF9933",
+            "backgroundColor":"#0000FF"
+        },
+        "properties":{
+        }
+    };
+</script>
+</body>
+</html>
+    

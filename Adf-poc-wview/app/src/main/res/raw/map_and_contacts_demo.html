@@ -1,0 +1,113 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="visionjsbridge.js" type="text/javascript"></script>
+    <script>
+        function addContact(id, jsonObject) {
+            sendMessage("Contact", "Add", { "id": "addContact", "contactData": { "firstName": "Name", "lastName": "Surname, Dr.", "phoneWork": "+1 (500) 5423", "phoneWorkFAX": "+1 (500) 5423"  }}, "", "");
+        }
+
+        function getDirections(id, jsonObject) {
+            sendMessage("OpenApp", "Map", { "id": "getDirections", "mapData": { "latitude": -34.837778, "longitude": -56.030278}} , "", "");
+        }
+
+         function callPhone(id, jsonObject) {
+            sendMessage("OpenApp", "Phone", { "id": "callPhone", "phoneData": { "phone": "+1 (500) 5423"}} , "", "");
+        }
+    </script>
+</head>
+<body style="background-color:#fff; padding: 0 0 0 0; margin: 0 0 0 0;">
+<a href="index.html" onClick="javascript:removeAllComponents();">Back</a><br/>
+<div style="width:100%; height:60px;" id="addContact"></div>
+<div style="width:100%; height:60px;" id="getDirections"></div>
+<div style="width:100%; height:60px;" id="callPhone"></div>
+<script>
+    autoLoadWidgets =["addContact", "getDirections", "callPhone"];
+
+    widgetMap["addContact"] = {
+                    'id':'addContact',
+                    'name':'addContact',
+                    'class':'ATKButton',
+                    'style': {
+                        'backgroundColor':'#DDDDDD',
+                        'backgroundColorOpacity':'0.5',
+                        'cornerRadius':'5',
+                        'borderWidth':'10',
+                        'borderColor':'#000000',
+                        'fontSize':20.0
+                    },
+                    'properties': {
+                        'disabled':false,
+                        'title': 'Add a Contact'
+                    },
+                    'actions': [{
+                            "event": "ATKActionSelect",
+                            "type": "javascript",
+                            "params": {
+                                "webId": "webView1",
+                                "callbackFunction":"addContact"
+                            }
+                        }
+                    ],
+                    'data':{}
+    }
+
+    widgetMap["getDirections"] ={
+                    'id':'getDirections',
+                    'name':'getDirections',
+                    'class':'ATKButton',
+                    'style': {
+                        'backgroundColor':'#DDDDDD',
+                        'backgroundColorOpacity':'0.5',
+                        'cornerRadius':'5',
+                        'borderWidth':'10',
+                        'borderColor':'#000000',
+                        'fontSize':20.0
+                    },
+                    'properties': {
+                        'disabled':false,
+                        'title': 'Get Directions'
+                    },
+                    'actions': [{
+                            "event": "ATKActionSelect",
+                            "type": "javascript",
+                            "params": {
+                                "webId": "webView1",
+                                "callbackFunction":"getDirections"
+                            }
+                        }
+                    ],
+                    'data':{}
+     }
+
+     widgetMap["callPhone"] ={
+            'id':'callPhone',
+            'name':'callPhone',
+            'class':'ATKButton',
+            'style': {
+                'backgroundColor':'#DDDDDD',
+                'backgroundColorOpacity':'0.5',
+                'cornerRadius':'5',
+                'borderWidth':'10',
+                'borderColor':'#000000',
+                'fontSize':20.0
+            },
+            'properties': {
+                'disabled':false,
+                'title': 'Call Phone'
+            },
+            'actions': [{
+                    "event": "ATKActionSelect",
+                    "type": "javascript",
+                    "params": {
+                        "webId": "webView1",
+                        "callbackFunction":"callPhone"
+                    }
+                }
+            ],
+            'data':{}
+     }
+
+</script>
+</body>
+</html>

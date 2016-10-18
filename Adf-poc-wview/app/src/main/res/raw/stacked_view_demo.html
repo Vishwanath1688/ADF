@@ -1,0 +1,396 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="visionjsbridge.js" type="text/javascript"></script>
+</head>
+<body>
+<br/>
+<a href="index.html" onClick="javascript:removeAllComponents();">Back</a>
+<br/>
+<div id="atkstackedview" style="position:absolute; width:100%; height:400px; top:120px; left:0px"></div>
+<script type="text/javascript">
+    autoLoadWidgets = ["atkstackedview"];
+
+    widgetMap["atkstackedview"] = {
+        "id": "atkstackedview",
+        "name": "atkstackedview",
+        "class": "ATKStackedView",
+        "notificationId":"",
+        "properties": {
+            "scrollDirection": "vertical"
+        },
+        "style": {
+            "backgroundColor":"#FFFFFF"
+        },
+        "data": {},
+        "components" : [
+                        {
+                            "id" : "locations_appointment_separator",
+                            "class" : "ATKLabel",
+                            "name" : "Label for the location appointment title",
+                            "notificationId" : "",
+                            "data" : {},
+                            "properties" : {
+                                "text" : ""
+                            },
+                            "style" : {
+                                "x" : 0,
+                                "y" : 0,
+                                "width" : 668,
+                                "height" : 1,
+                                "textAlignment" : "center",
+                                "backgroundColor" : "#EBEBEB",
+                                "fontName" : "AvenirNext-DemiBold",
+                                "fontSize" : 18,
+                                "fontColor" : "#2AA4CD"
+                            }
+                        },
+                        {
+                            "id" : "locations_appointment_subtitleLabel",
+                            "class" : "ATKLabel",
+                            "name" : "Label for the location appointment subtitle",
+                            "notificationId" : "",
+                            "data" : {},
+                            "properties" : {
+                                "text" : "Label for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle\nLabel for the location appointment subtitle",
+                                "adjustToContent":"YES",
+                                "numberOfLines": 0
+                            },
+                            "style" : {
+                                "x" : 44,
+                                "y" : 34,
+                                "width" : 580,
+                                "height" : 1000,
+                                "textAlignment" : "left",
+                                "textOrientation": "horizontal",
+                                "backgroundColor" : "",
+                                "fontName" : "AvenirNext-DemiBold",
+                                "fontSize" : 17,
+                                "fontColor" : "#6D6D6D"
+                            }
+                        },
+                        {
+                            "id" : "locations_appointment_servicesDescriptionsLabel",
+                            "class" : "ATKLabel",
+                            "name" : "Label for the location appointment services description",
+                            "notificationId" : "",
+                            "data" : {},
+                            "properties" : {
+                                "text" : "Services Provided:\nMon-Fri, 3PM-5PM\nSat-Sun, 2PM-5PM",
+                                "numberOfLines" :0
+                            },
+                            "style" : {
+                                "x" : 44,
+                                "y" : 15,
+                                "width" : 580,
+                                "height" : 84,
+                                "textAlignment" : "left",
+                                "backgroundColor" : "",
+                                "fontName" : "AvenirNext-Bold",
+                                "fontSize" : 16,
+                                "fontColor" : "#9B9B9B"
+                            }
+                        },
+                        {
+                            "id" : "location_appointment_form",
+                            "name" : "Form to create an appointment in location screen",
+                            "class" : "ATKForm",
+                            "properties" : {
+                                "submitButton" : {
+                                    "id" : "location_appointment_form_buttonId",
+                                    "notificationId" : "location_appointment_form_buttonId",
+                                    "name" : "buttonName",
+                                    "class" : "ATKButton",
+                                    "style" : {
+                                        "x" : 44,
+                                        "y" : 517,
+                                        "width" : 580,
+                                        "height" : 44,
+                                        "backgroundColor" : "#9B9B9B",
+                                        "fontName" : "AvenirNext-Regular",
+                                        "fontSize" : 16,
+                                        "fontColor" : "#FFFFFF"
+                                    },
+                                    "properties" : {
+                                        "title" : "Submit"
+                                    }
+                                },
+                                "closeOnSubmit" : "NO"
+                            },
+                            "style" : {
+                                "x" : 0,
+                                "y" : 10,
+                                "width" : 668,
+                                "height" : 605,
+                                "backgroundColor" : "white"
+                            },
+                        "components" : [
+                                        {
+                                        "id" : "locations_appointment_patientsNameLabel",
+                                        "class" : "ATKLabel",
+                                        "name" : "Label for the location appointment patients name",
+                                        "notificationId" : "",
+                                        "data" : {},
+                                        "properties" : {
+                                        "text" : "Patient's Name"
+                                        },
+                                        "style" : {
+                                        "x" : 44,
+                                        "y" : 107,
+                                        "width" : 580,
+                                        "height" : 16,
+                                        "textAlignment" : "left",
+                                        "backgroundColor" : "",
+                                        "fontName" : "AvenirNext-Regular",
+                                        "fontSize" : 16,
+                                        "fontColor" : "#6D6D6D"
+                                        }
+                                        },
+                                        {
+                                        "class" : "ATKTextField",
+                                        "id" : "locations_appointment_patientsNameField",
+                                        "name" : "Field for the location appointment patients name",
+                                        "notificationId" : "",
+                                        "data" : {
+                                        "text" : ""
+                                        },
+                                        "style" : {
+                                        "x" : 44,
+                                        "y" : 123,
+                                        "width" : 580,
+                                        "height" : 35,
+                                        "fontName" : "AvenirNext-Regular",
+                                        "fontSize" : 15,
+                                        "fontColor" : "#9B9B9B",
+                                        "textAlignment" : "left",
+                                        "paddingLeft" : 10,
+                                        "paddingRight" : 10,
+                                        "cornerRadius" : 0,
+                                        "borderColor" : "#000000",
+                                        "borderWidth" : 0,
+                                        "backgroundColor" : "#F4F3F3"
+                                        },
+                                        "properties" : {
+                                        "placeholder" : "",
+                                        "secureTextEntry" : false
+                                        }
+                                        },
+                                        {
+                                        "id" : "locations_appointment_dateOfBirthLabel",
+                                        "class" : "ATKLabel",
+                                        "name" : "Label for the location appointment Date Of Birth",
+                                        "notificationId" : "",
+                                        "data" : {},
+                                        "properties" : {
+                                        "text" : "Date of Birth"
+                                        },
+                                        "style" : {
+                                        "x" : 44,
+                                        "y" : 188,
+                                        "width" : 580,
+                                        "height" : 16,
+                                        "textAlignment" : "left",
+                                        "backgroundColor" : "",
+                                        "fontName" : "AvenirNext-Regular",
+                                        "fontSize" : 16,
+                                        "fontColor" : "#6D6D6D"
+                                        }
+                                        },
+                                        {
+                                        "class" : "ATKTextField",
+                                        "id" : "locations_appointment_dateOfBirthField",
+                                        "name" : "Field for the location appointment  Date Of Birth",
+                                        "notificationId" : "",
+                                        "data" : {
+                                        "text" : ""
+                                        },
+                                        "style" : {
+                                        "x" : 44,
+                                        "y" : 204,
+                                        "width" : 580,
+                                        "height" : 35,
+                                        "fontName" : "AvenirNext-Regular",
+                                        "fontSize" : 15,
+                                        "fontColor" : "#9B9B9B",
+                                        "textAlignment" : "left",
+                                        "paddingLeft" : 10,
+                                        "paddingRight" : 10,
+                                        "cornerRadius" : 0,
+                                        "borderColor" : "#000000",
+                                        "borderWidth" : 0,
+                                        "backgroundColor" : "#F4F3F3"
+                                        },
+                                        "properties" : {
+                                        "placeholder" : "",
+                                        "secureTextEntry" : false
+                                        }
+                                        },
+                                        {
+                                        "id" : "locations_appointment_contanctNumberLabel",
+                                        "class" : "ATKLabel",
+                                        "name" : "Label for the location appointment Contanct Number",
+                                        "notificationId" : "",
+                                        "data" : {},
+                                        "properties" : {
+                                        "text" : "Contanct Number"
+                                        },
+                                        "style" : {
+                                        "x" : 44,
+                                        "y" : 269,
+                                        "width" : 580,
+                                        "height" : 16,
+                                        "textAlignment" : "left",
+                                        "backgroundColor" : "",
+                                        "fontName" : "AvenirNext-Regular",
+                                        "fontSize" : 16,
+                                        "fontColor" : "#6D6D6D"
+                                        }
+                                        },
+                                        {
+                                        "class" : "ATKTextField",
+                                        "id" : "locations_appointment_contanctNumberField",
+                                        "name" : "Field for the location appointment Contanct Number",
+                                        "notificationId" : "",
+                                        "data" : {
+                                        "text" : ""
+                                        },
+                                        "style" : {
+                                        "x" : 44,
+                                        "y" : 285,
+                                        "width" : 580,
+                                        "height" : 35,
+                                        "fontName" : "AvenirNext-Regular",
+                                        "fontSize" : 15,
+                                        "fontColor" : "#9B9B9B",
+                                        "textAlignment" : "left",
+                                        "paddingLeft" : 10,
+                                        "paddingRight" : 10,
+                                        "cornerRadius" : 0,
+                                        "borderColor" : "#000000",
+                                        "borderWidth" : 0,
+                                        "backgroundColor" : "#F4F3F3"
+                                        },
+                                        "properties" : {
+                                        "placeholder" : "",
+                                        "secureTextEntry" : false
+                                        }
+                                        },
+                                        {
+                                        "id" : "locations_appointment_doctorsNameLabel",
+                                        "class" : "ATKLabel",
+                                        "name" : "Label for the location appointment Doctors Name",
+                                        "notificationId" : "",
+                                        "data" : {},
+                                        "properties" : {
+                                        "text" : "Doctor's Name"
+                                        },
+                                        "style" : {
+                                        "x" : 44,
+                                        "y" : 350,
+                                        "width" : 580,
+                                        "height" : 16,
+                                        "textAlignment" : "left",
+                                        "backgroundColor" : "",
+                                        "fontName" : "AvenirNext-Regular",
+                                        "fontSize" : 16,
+                                        "fontColor" : "#6D6D6D"
+                                        }
+                                        },
+                                        {
+                                        "class" : "ATKTextField",
+                                        "id" : "locations_appointment_doctorsNameField",
+                                        "name" : "Field for the location appointment Doctors Name",
+                                        "notificationId" : "",
+                                        "data" : {
+                                        "text" : ""
+                                        },
+                                        "style" : {
+                                        "x" : 44,
+                                        "y" : 366,
+                                        "width" : 580,
+                                        "height" : 35,
+                                        "fontName" : "AvenirNext-Regular",
+                                        "fontSize" : 15,
+                                        "fontColor" : "#9B9B9B",
+                                        "textAlignment" : "left",
+                                        "paddingLeft" : 10,
+                                        "paddingRight" : 10,
+                                        "cornerRadius" : 0,
+                                        "borderColor" : "#000000",
+                                        "borderWidth" : 0,
+                                        "backgroundColor" : "#F4F3F3"
+                                        },
+                                        "properties" : {
+                                        "placeholder" : "",
+                                        "secureTextEntry" : false
+                                        }
+                                        },
+                                        {
+                                        "id" : "locations_appointment_procedureRequestedLabel",
+                                        "class" : "ATKLabel",
+                                        "name" : "Label for the location appointment Procedure Requested",
+                                        "notificationId" : "",
+                                        "data" : {},
+                                        "properties" : {
+                                        "text" : "Procedure Requested"
+                                        },
+                                        "style" : {
+                                        "x" : 44,
+                                        "y" : 431,
+                                        "width" : 580,
+                                        "height" : 16,
+                                        "textAlignment" : "left",
+                                        "backgroundColor" : "",
+                                        "fontName" : "AvenirNext-Regular",
+                                        "fontSize" : 16,
+                                        "fontColor" : "#6D6D6D"
+                                        }
+                                        },
+                                        {
+                                        "class" : "ATKTextField",
+                                        "id" : "locations_appointment_procedureRequestedField",
+                                        "name" : "Field for the location appointment Procedure Requested",
+                                        "notificationId" : "",
+                                        "data" : {
+                                        "text" : ""
+                                        },
+                                        "style" : {
+                                        "x" : 44,
+                                        "y" : 447,
+                                        "width" : 580,
+                                        "height" : 35,
+                                        "fontName" : "AvenirNext-Regular",
+                                        "fontSize" : 15,
+                                        "fontColor" : "#9B9B9B",
+                                        "textAlignment" : "left",
+                                        "paddingLeft" : 10,
+                                        "paddingRight" : 10,
+                                        "cornerRadius" : 0,
+                                        "borderColor" : "#000000",
+                                        "borderWidth" : 0,
+                                        "backgroundColor" : "#F4F3F3"
+                                        },
+                                        "properties" : {
+                                        "placeholder" : "",
+                                        "secureTextEntry" : false
+                                        }
+                                        }
+                                        ],
+                        "actions" : [
+                                     {
+                                     "event" : "ATKActionSubmit",
+                                     "type" : "javascript",
+                                     "params" : {
+                                     "webId" : "webView1",
+                                     "callbackFunction" : "onSubmitAppointmentForm"
+                                     }
+                                     }
+                                     ]
+                        }
+                    ]
+
+    };
+</script>
+</body>
+</html>
+    

@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="visionjsbridge.js" type="text/javascript"></script>
+    <script>
+    </script>
+</head>
+<body>
+<br/>
+<a href="index.html" onClick="javascript:removeAllComponents();">Back</a>
+<br/>
+<div id="atkPDFReader" style="position:relative; width:100%; height:340px;" class="atkPDFReader"></div>
+<script>
+   autoLoadWidgets = ["atkPDFReader"];
+
+   widgetMap["atkPDFReader"] =  {
+        "id": "atkPDFReader",
+        "name": "ATKFileReader",
+        "class": "ATKPDFReader",
+        "notificationId":"",
+        "data": {
+            "source":"dist/images/example.pdf"
+        },
+        "style":{
+            "backgroundColor":""
+        },
+        "properties":{
+            "displayToolbar":"NO"
+        }
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ADF DEMO APP</string>
+
+    <!-- context.getFilesDir().getAbsolutePath() + File.separator + assets_folder_name -->
+    <string name="assets_folder_name">assets</string>
+
+    <string name="assets_folder_akp">dist</string>
+
+    <string name="assets_zip_file">dist.zip</string>
+
+    <string name="sync_update_file_name">update.zip</string>
+
+    <string name="images_path">dist/images</string>
+
+    <string name="get_location_request_message">After grant access to your location please retry</string>
+
+    <string name="permission_available_location">Location permissions have been granted.</string>
+
+    <string name="permission_location_rationale">Your location is needed to make distance calculations.</string>
+
+    <string name="permission_contacts_rationale">Contacts permissions are needed to add contacts.</string>
+
+    <string name="permissions_not_granted">Permissions were not granted.</string>
+
+</resources>

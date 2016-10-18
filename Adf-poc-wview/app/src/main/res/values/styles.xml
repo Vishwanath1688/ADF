@@ -1,0 +1,48 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+
+    <style name="FallDownAnimation">
+        <item name="android:windowEnterAnimation">@anim/fall_from_top</item>
+        <item name="android:windowExitAnimation">@anim/fall_to_bottom</item>
+    </style>
+
+    <style name="SlideInRightAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_from_right</item>
+        <item name="android:windowExitAnimation">@anim/slide_to_left</item>
+    </style>
+
+    <style name="FadeInAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="CircularProgressBar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="stroke_width">15dp</item>
+        <item name="progress" format="float">0.1</item>
+        <item name="progress_color">#ffff4444</item>
+        <item name="progress_background_color">#ffffffff</item>
+        <item name="marker_visible">true</item>
+        <item name="thumb_visible">true</item>
+    </style>
+
+    <style name="CircularProgressBarLight">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="stroke_width">15dp</item>
+        <item name="progress" format="float">0.1</item>
+        <item name="progress_color">#ffff4444</item>
+        <item name="progress_background_color">#aaa</item>
+        <item name="marker_visible">true</item>
+        <item name="thumb_visible">true</item>
+    </style>
+
+
+</resources>

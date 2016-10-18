@@ -1,0 +1,375 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="visionjsbridge.js" type="text/javascript"></script>
+    <script>
+    function showToast(id, jsonObject) {
+        androidFromJS.showToast("button1");
+    }
+
+    function showToastWMessage(id, jsonObject) {
+        androidFromJS.showToast("button1", "HERP-FLERP");
+    }
+
+    function changeText(id, jsonObject) {
+        androidFromJS.changeText("button1", "Marcha como loco");
+    }
+    </script>
+</head>
+<body style="background-color:gray; padding: 0 0 0 0; margin: 0 0 0 0;">
+<a href="index.html" onClick="javascript:removeAllComponents();">Back</a>
+<br/>
+<div style="position:absolute; width:100%; height:300px; top:30px; left:0px" id="atktable1"></div>
+
+<script>
+
+    autoLoadWidgets =["atktable1"];
+
+widgetMap["atktable1"] = {
+    "id":"ATKTableView1",
+    "name":"ATKTableView1",
+    "class":"ATKCollectionView",
+    "notificationId":"",
+    "style":{
+        "x":"2%",
+        "y":"5%",
+        "width":"45%",
+        "height":500,
+        "numberOfColumns":3,
+        "backgroundColor":"#C3D4EC",
+        "grouped":true,
+        "heightHeaderSection":50,
+        "mirrorFloorStyle":true,
+        "indexView":{
+            "fontName":"Courier",
+            "fontSize":15,
+            "fontColor":"white",
+            "touchStatusBackgroundColor": "blue",
+            "touchStatusViewAlpha": 0.5
+        },
+        "sectionHeader":{
+            "fontName":"Courier",
+            "fontSize":20,
+            "backgroundColor":"rgba(0,179,179, 0.5)",
+            "fontColor":"#FFFFFF",
+            "alignment":"left", //left, right, center
+            "height": 50,
+            "border":{
+                "bottom":{
+                    "color":"red",
+                    "width":2
+                },
+                "top":{
+                    "color":"green",
+                    "width":1
+                },
+                "left":{
+                    "color":"green",
+                    "width":1
+                },
+                "right":{
+                    "color":"red",
+                    "width":2
+                }
+            },
+            "insets":"{0,50,0,0}" //{top, left, bottom, right} the border could overlap with the title, so you should set the insets (like padding or margin in css)
+        },
+        "sectionFooter":{
+            "fontName":"Courier",
+            "fontSize":30,
+            "backgroundColor":"rgb(0,0,103)",
+            "fontColor":"rgb(179,0,0)",
+            "alignment":"left",
+            "height": 30
+        },
+        "itemBorder":{
+            "bottom":{
+                "color":"white",
+                "width":1.5
+            }
+        },
+        "disableStickyHeaders":false, //only applicable for list layout
+        "bounces":true,
+        "highlightColor":"rgb(179,90,0)" //when the cell is selected
+    },
+    "properties":{
+        "layoutType" : "grid",
+        "loadMoreButton":true,
+        "itemLayouts":{
+            "defaultLayout" : "Section 1",
+            "Section 1" :{
+                "x":10,
+                "y":0,
+                "width":200,
+                "height":100,
+                "backgroundColor":"#FFFFFF",
+                "components":[
+                    {
+                        "bindKey":"title",
+                        "componentJSON":{
+                            "id":"titleLabelId",
+                            "name":"titleLabelName",
+                            "class":"ATKLabel",
+                            "notificationId":"",
+                            "style":{
+                                "x":10,
+                                "y":10,
+                                "width":492,
+                                "height":40,
+                                "backgroundColor":"",
+                                "fontName":"AvenirNext-Regular",
+                                "fontSize":15,
+                                "fontColor":"#000000"
+                            },
+                            "data":{},
+                            "properties":{
+                                "text":""
+                            }
+                        }
+                    },
+                    {
+                        "bindKey":"subtitle",
+                        "componentJSON":{
+                            "id":"subTitleLabelId",
+                            "name":"subTitleLabelName",
+                            "class":"ATKLabel",
+                            "notificationId":"",
+                            "style":{
+                                "x":10,
+                                "y":40,
+                                "width":492,
+                                "height":40,
+                                "backgroundColor":"",
+                                "fontName":"AvenirNext-Regular",
+                                "fontSize":15,
+                                "fontColor":"#888888"
+                            },
+                            "data":{},
+                            "properties":{
+                                "text":""
+                            }
+                        }
+                    },
+                    {
+                        "bindKey":"image",
+                        "componentJSON":{
+                            "id":"imageViewId",
+                            "name":"imageView",
+                            "class":"ATKImageView",
+                            "notificationId":"",
+                            "data":{
+                                "source":"",
+                                "type":"local"
+                            },
+                            "style":{
+                                "x":50,
+                                "y":0,
+                                "width":80,
+                                "height":80,
+                                "backgroundColor":""
+                            },
+                            "properties":{}
+                        }
+                    }
+                ]
+            },
+            "Section 2" :{
+                "x":10,
+                "y":0,
+                "width":200,
+                "height":150,
+                "backgroundColor":"#FFFFFF",
+                "components":[
+                    {
+                    "bindKey":"title",
+                        "componentJSON":{
+                            "id":"titleLabelId",
+                            "name":"titleLabelName",
+                            "class":"ATKLabel",
+                            "notificationId":"",
+                            "style":{
+                                "x":150,
+                                "y":65,
+                                "width":200,
+                                "height":40,
+                                "backgroundColor":"",
+                                "fontName":"AvenirNext-Regular",
+                                "fontSize":25,
+                                "fontColor":"#DDDDDD"
+                            },
+                            "data":{},
+                            "properties":{
+                               "text":""
+                            }
+                        }
+                    },
+                    {
+                        "bindKey":"image",
+                        "componentJSON":{
+                            "id":"imageViewId",
+                            "name":"imageView",
+                            "class":"ATKImageView",
+                            "notificationId":"",
+                            "data":{
+                                "source":"",
+                                "type":"local"
+                            },
+                            "style":{
+                                "x":10,
+                                "y":0,
+                                "width":130,
+                                "height":150,
+                                "backgroundColor":""
+                            },
+                            "properties":{}
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "data":{
+        "type":"jsonString",
+        "source":{
+            "sections": true,
+            "moreItems": true,
+            "items" : [
+                {
+                    "section_title":"Section 1",
+                    "items": [
+                        {
+                            "title": "S1 Lake Nature",
+                            "subtitle": "S1 Description of Item 1",
+                            "image": {
+                                "source": "http://i.imgur.com/ihX2QPY.png",
+                                "type": "remote"
+                            },
+                            "layout": "Section 2"
+                        },
+                        {
+                            "title": "S1 Mountains",
+                            "subtitle": "S1 Description of Item 2",
+                            "image": {
+                                "source": "http://i.imgur.com/zP2LpMT.jpg",
+                                "type": "remote"
+                            }
+                        },
+                        {
+                            "title": "S1 Mountains",
+                            "subtitle": "S1 Description of Item 2",
+                            "image": {
+                                "source": "http://i.imgur.com/zP2LpMT.jpg",
+                                "type": "remote"
+                            }
+                        },
+                        {
+                            "title": "S1 Mountains",
+                            "subtitle": "S1 Description of Item 2",
+                            "image": {
+                                "source": "http://i.imgur.com/zP2LpMT.jpg",
+                                "type": "remote"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "section_title":"Section 2",
+                    "items": [
+                        {
+                            "title": "S2 Fantasy Gardens",
+                            "image": {
+                                "source": "http://i.imgur.com/RZrwqsc.png",
+                                "type": "remote"
+                            }
+                        },
+                        {
+                            "title": "S2 Ethel Merman NYC",
+                            "image": {
+                                "source": "http://i.imgur.com/CA6wJXq.jpg",
+                                "type": "remote"
+                            }
+                        },
+                        {
+                            "title": "S2 Ethel Merman NYC",
+                            "image": {
+                                "source": "http://i.imgur.com/CA6wJXq.jpg",
+                                "type": "remote"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "section_title":"Section 3",
+                    "items": [
+                        {
+                            "title": "S3 WAT Gardens",
+                            "subtitle": "S3 Description of Item 1",
+                            "image": {
+                                "source": "http://i.imgur.com/elito1b.jpg",
+                                "type": "remote"
+                            }
+                        },
+                        {
+                            "title": "S3 Ethel Merman NYC",
+                            "subtitle": "S3 Description of Item 1",
+                            "image": {
+                                "source": "http://i.imgur.com/9RlM6yM.jpg",
+                                "type": "remote"
+                            }
+                        },
+                        {
+                            "title": "S3 Ethel Merman NYC",
+                            "subtitle": "S3 Description of Item 1",
+                            "image": {
+                                "source": "http://i.imgur.com/9RlM6yM.jpg",
+                                "type": "remote"
+                            }
+                        },
+                        {
+                            "title": "S3 Ethel Merman NYC",
+                            "subtitle": "S3 Description of Item 1",
+                            "image": {
+                                "source": "http://i.imgur.com/9RlM6yM.jpg",
+                                "type": "remote"
+                            }
+                        },
+                        {
+                            "title": "S3 Ethel Merman NYC",
+                            "subtitle": "S3 Description of Item 1",
+                            "image": {
+                                "source": "http://i.imgur.com/9RlM6yM.jpg",
+                                "type": "remote"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "params":"",
+        "returnType":"Dictionary"
+    },
+    "actions":[
+        {
+            "event":"ATKActionSelect",
+            "type":"javascript",
+            "params":{
+                "webId":"webView1",
+                "callbackFunction":"showToast"
+            }
+        },
+        {
+            "event":"ATKActionMoreData",
+            "type":"javascript",
+            "params":{
+                "webId":"webView1",
+                "callbackFunction":"showToast"
+            }
+        }
+    ]
+};
+
+    postNotification("RemoveLaunchScreen");
+
+</script>
+</body>
+</html>

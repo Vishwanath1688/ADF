@@ -1,0 +1,288 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="visionjsbridge.js" type="text/javascript"></script>
+    <script>
+        function showModalWithTransitionModded(modalId, transitionId, transitionDirection, moveSuperView){
+            var widgetJSON = widgetMap[modalId];
+            widgetJSON.properties.transition = transitionId;
+            widgetJSON.properties.moveSuperView = moveSuperView;
+            widgetJSON.properties.transitionDirection = transitionDirection;
+            showWidget(widgetJSON.id);
+        }
+
+        function showModalWithTransitionFromJson(modalId){
+            var widgetJSON = widgetMap[modalId];
+            showWidget(widgetJSON.id);
+        }
+
+        function buttonComponentRight() {
+            removeComponent('demoSliderComponentRight');
+            window.location = "login.html";
+        }
+
+        function buttonComponentLeft() {
+            removeComponent('demoSliderComponentLeft');
+            window.location = "login.html";
+        }
+
+        function buttonComponentDown() {
+            removeComponent('demoSliderComponentDown');
+            window.location = "login.html";
+        }
+
+        function buttonComponentUp() {
+            removeComponent('demoSliderComponentUp');
+            window.location = "login.html";
+        }
+    </script>
+</head>
+<body>
+<br/>
+<a href="index.html" onClick="javascript:removeAllComponents();">Back</a>
+<br/>
+<input type="button" value="Load Data" onClick="loadData()" />
+<br/>
+<div class="FromJSon" >
+    <h2><center>Slide Component Demo</center></h2>
+</div>
+<div class="Slide" >
+    <center>
+        <input type="button" value="Left Move" onClick="showModalWithTransitionModded('demoSliderComponentLeft','Slide','Left','yes')" />
+        <br><br>
+        <input type="button" value="Right Move" onClick="showModalWithTransitionModded('demoSliderComponentRight','Slide','Right','yes')" />
+        <br><br>
+        <input type="button" value="Up Move" onClick="showModalWithTransitionModded('demoSliderComponentUp','Slide','up','yes')" />
+        <br><br>
+        <input type="button" value="Down Move" onClick="showModalWithTransitionModded('demoSliderComponentDown','Slide','down','yes')" />
+        <br><br>
+        <br><br>
+        <input type="button" value="Left NoMove" onClick="showModalWithTransitionModded('demoSliderComponentLeft','Slide','Left','no')" />
+        <br><br>
+        <input type="button" value="Right NoMove" onClick="showModalWithTransitionModded('demoSliderComponentRight','Slide','Right','no')" />
+        <br><br>
+        <input type="button" value="Up NoMove" onClick="showModalWithTransitionModded('demoSliderComponentUp','Slide','up','no')" />
+        <br><br>
+        <input type="button" value="Down NoMove" onClick="showModalWithTransitionModded('demoSliderComponentDown','Slide','down','no')" />
+    </center>
+</div>
+
+<script>
+    autoLoadWidgets = [];
+
+    widgetMap["demoSliderComponentRight"] = {
+        "id":"demoSliderComponentRight",
+        "name":"Modal Widget",
+        "class":"ATKSlidingComponent",
+        "notificationId":"",
+        "data":{},
+        "style":{
+            "x" :0,
+            "y" :0,
+            "width" : "60%",
+            "height" : "100%",
+            "overlayColor": "#000000",
+            "overlayOpacity": 0.2,
+            "backgroundColor": "#88cb00",
+            "backgroundOpacity": 1},
+        "properties":{
+            "transition":"move",
+            "transitionDirection":"right",
+            "moveSuperView":"yes"
+        },
+        "components":[{
+                      'id':'button1',
+                        'name':'button1',
+                        'class':'ATKButton',
+                        'style': {
+                             "x":"5%",
+                             "y":20,
+                             "width":"90%",
+                             "height":50,
+                            'backgroundColor':'#DDDDDD',
+                            'backgroundColorOpacity':'0.5',
+                            'cornerRadius':'2',
+                            'borderWidth':'0',
+                            'borderColor':'#000000',
+                            'fontSize':20.0
+                        },
+                        'properties': {
+                            'disabled':false,
+                            'title': 'Button 1',
+                        },
+                        'actions': [{
+                                "event": "ATKActionSelect",
+                                "type": "javascript",
+                                "params": {
+                                    "webId": "webView1",
+                                    "callbackFunction":"buttonComponentRight"
+                                }
+                            }
+                        ],
+                        'data':{}
+                      }]
+    };
+
+    widgetMap["demoSliderComponentLeft"] = {
+        "id":"demoSliderComponentLeft",
+        "name":"Modal Widget",
+        "class":"ATKSlidingComponent",
+        "notificationId":"",
+        "data":{},
+        "style":{
+            "x" :"40%",
+            "y" :0,
+            "width" : "60%",
+            "height" : "100%",
+            "overlayColor": "#000000",
+            "overlayOpacity": 0.2,
+            "backgroundColor": "#88cb00",
+            "backgroundOpacity": 1},
+        "properties":{
+            "transition":"move",
+            "transitionDirection":"right",
+            "moveSuperView":"yes"
+        },
+        "components":[{
+                      'id':'button1',
+                        'name':'button1',
+                        'class':'ATKButton',
+                        'style': {
+                             "x":"5%",
+                             "y":20,
+                             "width":"90%",
+                             "height":50,
+                            'backgroundColor':'#DDDDDD',
+                            'backgroundColorOpacity':'0.5',
+                            'cornerRadius':'2',
+                            'borderWidth':'0',
+                            'borderColor':'#000000',
+                            'fontSize':20.0
+                        },
+                        'properties': {
+                            'disabled':false,
+                            'title': 'Button 1',
+                        },
+                        'actions': [{
+                                "event": "ATKActionSelect",
+                                "type": "javascript",
+                                "params": {
+                                    "webId": "webView1",
+                                    "callbackFunction":"buttonComponentLeft"
+                                }
+                            }
+                        ],
+                        'data':{}
+                      }]
+    };
+
+
+    widgetMap["demoSliderComponentUp"] = {
+        "id":"demoSliderComponentUp",
+        "name":"Modal Widget",
+        "class":"ATKSlidingComponent",
+        "notificationId":"",
+        "data":{},
+        "style":{
+            "x" :0,
+            "y" :"40%",
+            "width" : "100%",
+            "height" : "60%",
+            "overlayColor": "#000000",
+            "overlayOpacity": 0.2,
+            "backgroundColor": "#88cb00",
+            "backgroundOpacity": 1},
+        "properties":{
+            "transition":"move",
+            "transitionDirection":"right",
+            "moveSuperView":"yes"
+        },
+        "components":[{
+                      'id':'button1',
+                        'name':'button1',
+                        'class':'ATKButton',
+                        'style': {
+                             "x":"5%",
+                             "y":20,
+                             "width":"90%",
+                             "height":50,
+                            'backgroundColor':'#DDDDDD',
+                            'backgroundColorOpacity':'0.5',
+                            'cornerRadius':'2',
+                            'borderWidth':'0',
+                            'borderColor':'#000000',
+                            'fontSize':20.0
+                        },
+                        'properties': {
+                            'disabled':false,
+                            'title': 'Button 1',
+                        },
+                        'actions': [{
+                                "event": "ATKActionSelect",
+                                "type": "javascript",
+                                "params": {
+                                    "webId": "webView1",
+                                    "callbackFunction":"buttonComponentUp"
+                                }
+                            }
+                        ],
+                        'data':{}
+                      }]
+    };
+
+
+    widgetMap["demoSliderComponentDown"] = {
+        "id":"demoSliderComponentDown",
+        "name":"Modal Widget",
+        "class":"ATKSlidingComponent",
+        "notificationId":"",
+        "data":{},
+        "style":{
+            "x" :0,
+            "y" :0,
+            "width" : "100%",
+            "height" : "60%",
+            "overlayColor": "#000000",
+            "overlayOpacity": 0.2,
+            "backgroundColor": "#88cb00",
+            "backgroundOpacity": 1},
+        "properties":{
+            "transition":"move",
+            "transitionDirection":"right",
+            "moveSuperView":"yes"
+        },
+        "components":[{
+                      'id':'button1',
+                        'name':'button1',
+                        'class':'ATKButton',
+                        'style': {
+                             "x":"5%",
+                             "y":20,
+                             "width":"90%",
+                             "height":50,
+                            'backgroundColor':'#DDDDDD',
+                            'backgroundColorOpacity':'0.5',
+                            'cornerRadius':'2',
+                            'borderWidth':'0',
+                            'borderColor':'#000000',
+                            'fontSize':20.0
+                        },
+                        'properties': {
+                            'disabled':false,
+                            'title': 'Button 1',
+                        },
+                        'actions': [{
+                                "event": "ATKActionSelect",
+                                "type": "javascript",
+                                "params": {
+                                    "webId": "webView1",
+                                    "callbackFunction":"buttonComponentDown"
+                                }
+                            }
+                        ],
+                        'data':{}
+                      }]
+    };
+</script>
+</body>
+</html>

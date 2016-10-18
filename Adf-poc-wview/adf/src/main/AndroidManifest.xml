@@ -1,0 +1,30 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.altimetrik.adf">
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+
+        <service
+            android:name="com.altimetrik.adf.Core.Managers.SyncContentManager.DownloadService"
+            android:exported="false" />
+
+        <receiver android:name="com.altimetrik.adf.Core.Managers.NotificationManager.NotificationPublisher" />
+
+        <receiver
+            android:name="com.altimetrik.adf.Core.Managers.NotificationManager.Services.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.couchbase.todolite" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.altimetrik.adf.Core.Managers.NotificationManager.Services.GCMNotificationIntentService" />
+
+    </application>
+
+</manifest>
